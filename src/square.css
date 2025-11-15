@@ -1,0 +1,76 @@
+.square {
+  width: 100px;
+  height: 100px;
+  background-color: #d3d3d3; /* 淺灰色 */
+  border: 2px solid #999;
+  font-size: 2rem; /* 放大 X / O 字樣 */
+  font-weight: bold;
+  cursor: pointer;
+  text-align: center;
+  vertical-align: middle;
+  transition: background-color 0.2s, transform 0.1s;
+}
+
+.square:hover {
+  background-color: #bfbfbf; /* 滑鼠移上去時稍微變深 */
+  transform: scale(1.05); /* 輕微放大 */
+}
+
+.board-row {
+  display: flex;
+}
+
+
+/* 外層：讓整個 Game 置中 */
+.game-wrapper {
+  position: relative;          /* 給 back-button 當定位的父層 */
+  min-height: 100vh;           /* 滿版高度 */
+  display: flex;
+  justify-content: center;     /* 垂直方向的置中（因為 column） */
+  align-items: center;         /* 水平方向置中 */
+  flex-direction: column;
+}
+
+/* 右上角返回按鈕（相對於 game-wrapper） */
+.back-button {
+  position: absolute;
+  top: 20px;
+  right: 20px;
+
+  display: inline-block;
+  padding: 8px 16px;
+  background-color: #4CAF50;
+  color: white;
+  text-decoration: none;
+  border-radius: 8px;
+  font-size: 0.95rem;
+  font-weight: bold;
+  transition: background-color 0.2s, transform 0.1s;
+}
+
+.back-button:hover {
+  background-color: #45a049;
+  transform: scale(1.05);
+}
+
+
+/* Game 本體：改成垂直排列 */
+.game {
+  display: flex;
+  flex-direction: column;   /* 棋盤在上，history 在下 */
+  align-items: center;      /* 水平置中 */
+}
+
+/* 棋盤區域 */
+.game-board {
+  margin-bottom: 16px;      /* 棋盤和 history 之間留一點空間 */
+}
+
+/* 歷史回合列表 */
+.game-info {
+  margin-top: 8px;
+}
+
+.game-info ol {
+  padding-left: 20px;       /* 讓項目符號不要太貼邊 */
+}
