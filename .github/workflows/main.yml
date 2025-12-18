@@ -37,6 +37,6 @@ jobs:
           host: ${{ secrets.REACT_TEST_VM_IP }}
           username: ${{ secrets.REACT_TEST_VM_USERNAME }}
           key: ${{ secrets.REACT_TEST_VM }}
-          source: "dist/*"   # 這裡填寫你 build 出來的資料夾名稱 (e.g., dist/* 或 build/*)
+          source: "build/*"   # 這裡填寫你 build 出來的資料夾名稱 (e.g., dist/* 或 build/*)
           target: "/var/www/html"
           strip_components: 1 # 重要！這會去掉 dist/ 目錄本身，只傳送裡面的內容
