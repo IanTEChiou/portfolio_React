@@ -35,4 +35,7 @@ jobs:
         run: terraform validate
 
       - name: Terraform plan
-        run: terraform plan
+        env:
+          TF_VAR_key_name: ${{ secrets.TF_VAR_key_name }}
+          TF_VAR_my_ip_cidr: ${{ secrets.TF_VAR_my_ip_cidr }}
+        run: terraform plan -input=false
