@@ -34,8 +34,14 @@ jobs:
       - name: Terraform validate
         run: terraform validate
 
-      - name: Terraform plan
+      - name: Terraform plan (save)
         env:
           TF_VAR_key_name: ${{ secrets.TF_VAR_key_name }}
           TF_VAR_my_ip_cidr: ${{ secrets.TF_VAR_my_ip_cidr }}
-        run: terraform plan -input=false
+        run: terraform plan -input=false -out=tfplan
+
+      - name: Upload plan artifact
+        uses: actions/upload-artifact@v4
+        with:
+          name: tfplan
+          path: terraform/tfplan
