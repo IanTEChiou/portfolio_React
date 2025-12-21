@@ -77,5 +77,8 @@ jobs:
           name: tfplan
           path: terraform
 
-      - name: Show plan (safe check)
-        run: terraform show -no-color tfplan | tail -n 40
+      - name: Terraform apply
+        run: terraform apply -input=false -auto-approve tfplan
+
+      - name: Show outputs
+        run: terraform output
