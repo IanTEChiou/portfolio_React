@@ -1,70 +1,67 @@
-# Getting Started with Create React App
+# AWS Infrastructure and React Playground
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+This repository serves as a technical sandbox for exploring Infrastructure as Code (IaC) via Terraform and modern frontend development with React. The project is currently hosted on AWS and managed through a robust CI/CD pipeline.
 
-## Available Scripts
 
-In the project directory, you can run:
 
-### `npm start`
+## Project Overview
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+The primary objective of this project is to practice professional cloud orchestration and full-stack integration. While the site currently hosts a collection of mini-games, it is actively evolving into a comprehensive professional portfolio.
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+### Current Features
+* **Minesweeper:** A logic-based challenge focusing on complex state management in React.
+* **Tic-Tac-Toe:** A classic implementation used to refine component logic and UI flow.
+* **Infrastructure Management:** Fully automated deployment using Terraform.
 
-### `npm test`
+---
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+## Technical Architecture
 
-### `npm run build`
+The environment is built on AWS using a modular approach to ensure scalability and security.
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+### Infrastructure (AWS & Terraform)
+* **Amazon EC2:** Provisioned to handle application logic and potential backend services.
+* **Amazon S3:** Utilised for storing static assets and web hosting.
+* **Amazon DynamoDB:** A NoSQL database used for game data persistence and user records.
+* **Terraform:** Defines the entire stack as code, ensuring environment consistency.
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+### Frontend (React)
+* Developed using React with a focus on functional components and hooks.
+* Managed via **npm** for dependency resolution and production builds.
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+### CI/CD (GitHub Actions)
+* Automated workflows are triggered on every push to the main branch.
+* The pipeline handles the building of the React application and synchronises changes with AWS.
 
-### `npm run eject`
+---
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+## Getting Started
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+### Local Development
+To run the React application locally, follow these steps:
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+1. Install dependencies: `npm install`
+2. Start the development server: `npm start`
+3. Build for production: `npm run build`
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+### Infrastructure Deployment
+To modify or deploy the infrastructure:
 
-## Learn More
+1. Initialise the directory: `terraform init`
+2. Review the execution plan: `terraform plan`
+3. Apply changes: `terraform apply`
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+---
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+## Future Roadmap
 
-### Code Splitting
+The long-term vision for this repository includes the following milestones:
+* Transitioning the landing page into a professional personal profile.
+* Integrating DynamoDB more deeply to track global high scores for the games.
+* Implementing advanced VPC configurations to enhance network security.
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+---
 
-### Analyzing the Bundle Size
+## Contact
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+If you have any questions regarding this project, feel free to reach out via GitHub Issues.
